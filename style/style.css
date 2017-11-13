@@ -59,6 +59,10 @@ hr{
     margin:20px;
     margin-top:10px;
 }
+#borderCustom{
+    border: solid;
+    width: 8.5cm;
+}
 
 
 
