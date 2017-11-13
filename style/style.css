@@ -1,0 +1,62 @@
+@font-face{
+    font-family:candara;
+    src: url(../fonts/Candara.ttf);
+}
+
+@font-face{
+    font-family:adobe;
+    src: url(../fonts/AdobeFanHeitiStd-Bold.otf);
+}
+.bodyIndex{
+    background-image: url(../img/bgImg.jpg);
+    background-size: 1280px; 
+    background-repeat: no-repeat;
+    background-position: contain;
+    color: white;
+    font-family: candara;
+}
+
+.IDEtitle,.title1, .title2{
+    padding:0;
+    margin-left: 30px;
+}
+
+.IDEtitle{
+    margin-top: 200px;
+}
+
+.copyright{
+    margin-left:30px;
+}
+
+.loginmodal{
+    color:black;
+    max-width: 450px;
+}
+
+.loginmodal a{
+    text-decoration-line: underline;
+    color: black;
+}
+
+.loginmodal a:hover{
+    text-decoration-line: underline;
+    color: rgb(134, 15, 15);
+}
+
+.modalContainer{
+    width: 450px;
+    margin:0;
+}
+
+hr{
+    height: 8px;
+    width: 550px;
+    text-align: left;
+}
+
+.imgLogo{
+    margin:20px;
+    margin-top:10px;
+}
+
