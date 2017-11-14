@@ -19,7 +19,6 @@
 	</head>
 	
 	<body class="w3-theme bodyIndex">
-		<a href="pages/lecturer/lct.php">lct</a>
 		<div class="menuBar w3-padding-large w3-display-topright">
 		<button class="w3-button w3-grey w3-opacity-min w3-hover-white w3-small " >About Us</button>
 		<button class="w3-button w3-grey w3-opacity-min w3-hover-white w3-small " >Contact Us</button>
@@ -44,7 +43,7 @@
 				class="w3-button w3-display-topright">&times;</span>
 				<h2>Login</h2>
 
-				<form action="">
+				<form action="phpScript/login.php" method="post">
 					<input class="w3-input" type="text" name="username" placeholder="username">
 					<br>
 					<input class="w3-input" type="password" name="password" placeholder="password">
@@ -52,6 +51,8 @@
 					<input type ="submit" class="w3-btn w3-black w3-small w3-hover-white" value="LOGIN" name="iSubmit">
 					<br>
 				</form>
+
+				<!--include login.php-->
 				
 				<p><a href="">Forget password</a> or <a href="">forget username</a>?</p>
 				</div>
