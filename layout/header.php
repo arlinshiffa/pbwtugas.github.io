@@ -7,6 +7,6 @@
             <br>
         </div>
        <div width="25%">
-            <img class="w3-display-topright imgLogo" src="img/logo.png" alt="" width="130px">git
+            <img class="w3-display-topright imgLogo" src="img/logo.png" alt="" width="130px">
        </div>
 </div>
