@@ -1,6 +1,6 @@
 <?php
     $root='/pbwtugas.github.io';
-    echo __DIR__;
+  
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href=<?php echo '"'.$root?>/lib/w3.css">
