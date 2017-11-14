@@ -7,7 +7,7 @@
 		<?php include('../../layout/style.php');?>
 	</head>
 	
-	<body class="bodyIndex">
+	<body>
 		<?php $myCourses = false ?>
 		<!-- include header -->
 		<div class="w3-main">
