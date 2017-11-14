@@ -1,20 +1,25 @@
+<?php 
+	if(strpos($_SERVER['REQUEST_URI'],'.php')!=false){
+		$GLOBALS['root']= dirname($_SERVER['REQUEST_URI']);
+	}else{
+		$GLOBALS['root']= $_SERVER['REQUEST_URI'];
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 
 		<title>IDE</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="lib/w3.css">
-		<link rel="stylesheet" href="lib/w3-theme-dark-grey.css">
-		<link rel="stylesheet" href="style/style.css">
-		<link rel="stylesheet" href="lib/font-awesome.min.css">
-		<link rel="stylesheet" href="lib/font-awesome.css">
+		<?php
+			include("layout/style.php");
+		?>
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	</head>
 	
 	<body class="w3-theme bodyIndex">
+		<a href="pages/lecturer/lct.php">lct</a>
 		<div class="menuBar w3-padding-large w3-display-topright">
 		<button class="w3-button w3-grey w3-opacity-min w3-hover-white w3-small " >About Us</button>
 		<button class="w3-button w3-grey w3-opacity-min w3-hover-white w3-small " >Contact Us</button>
