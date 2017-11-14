@@ -44,12 +44,15 @@
 				class="w3-button w3-display-topright">&times;</span>
 				<h2>Login</h2>
 
-				<input class="w3-input" type="text" name="username" placeholder="username">
-				<br>
-				<input class="w3-input" type="password" name="password" placeholder="password">
-				<br>
-				<button class="w3-btn w3-black w3-small w3-hover-white">LOGIN</button>
-				<br>
+				<form action="">
+					<input class="w3-input" type="text" name="username" placeholder="username">
+					<br>
+					<input class="w3-input" type="password" name="password" placeholder="password">
+					<br>
+					<input type ="submit" class="w3-btn w3-black w3-small w3-hover-white" value="LOGIN" name="iSubmit">
+					<br>
+				</form>
+				
 				<p><a href="">Forget password</a> or <a href="">forget username</a>?</p>
 				</div>
 			</div>
