@@ -4,9 +4,10 @@
 	<head>
 		<title>IDE</title>
 		<!-- include style -->
+		<?php include('../../layout/style.php');?>
 	</head>
 	
-	<body>
+	<body class="bodyIndex">
 		<?php $myCourses = false ?>
 		<!-- include header -->
 		<div class="w3-main">

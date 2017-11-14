@@ -1,7 +1,12 @@
 <?php
-    include("../index.php");
-    include();
+    include("connection.php");
     $username=$_GET['username'];
-    
-    $result= mysqli_query($con, "SELECT * FROM users WHERE")
+    $password=$_GET['password'];
+
+    $query=" SELECT * FROM users WHERE username=$username";
+    if($result!="" || $result!=null){
+        $tempPass= mysqli_query($con, "SELECT * FROM users WHERE");
+    }else{
+        echo "WRONG USERNAME";
+    }
 ?>
