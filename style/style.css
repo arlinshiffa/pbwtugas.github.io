@@ -50,9 +50,16 @@
 }
 /* --------INDEX HTML STYLING ENDS HERE------------*/
 hr{
-    height: 8px;
-    width: 550px;
+    width: 600px;
     text-align: left;
+    height:5;
+    color: grey;
+}
+
+.headerText{
+    width: 75%;
+    position: relative;
+    margin:0;
 }
 
 .imgLogo{
