@@ -20,6 +20,7 @@
         }
     }
     
+    //check user's role
     $query="SELECT userGroups.name as name FROM userGroups INNER JOIN users ON userGroups.ID_UG=users.ID_UG WHERE username='$username'";
     $result=$conn->query($query)->fetch_array();
     $role=$result['name'];

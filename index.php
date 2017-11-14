@@ -1,10 +1,3 @@
-<?php 
-	if(strpos($_SERVER['REQUEST_URI'],'.php')!=false){
-		$GLOBALS['root']= dirname($_SERVER['REQUEST_URI']);
-	}else{
-		$GLOBALS['root']= $_SERVER['REQUEST_URI'];
-	}
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,9 +6,6 @@
 		<?php
 			include("layout/style.php");
 		?>
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 	</head>
 	
 	<body class="w3-theme bodyIndex">
