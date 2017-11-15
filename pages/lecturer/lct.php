@@ -1,4 +1,7 @@
 <!-- include connection -->
+<?php
+	include('..\..\phpScript\connection.php');
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,8 +13,10 @@
 	<body>
 		<?php $myCourses = false ?>
 		<!-- include header -->
+		<?php include('../../layout/header.php'); ?>
 		<div class="w3-main">
 			<!-- include sidebar -->
+			<?php include('../../layout/sidebar.php'); ?>
 		</div>
 	</body>
 </html>
