@@ -23,7 +23,7 @@
 		
 		<button class="w3-button w3-grey w3-opacity-min w3-hover-white w3-medium" 
 		onclick="document.getElementById('login').style.display='block'"style="margin-left:30px">Login</button>
-		<p class="w3-display-bottomleft copyright" style="font-size:12px;">©Developed by Maria Veronica Claudia Muljana,S.T.</p>
+		<p class="w3-display-bottomleft copyright" style="font-size:12px;">©Developed by Arlin Sasqia Puspa Shiffa & Adriswara D. Indramufti</p>
 	
 		<!-- The Modal -->
 		<div id="login" class="w3-modal divModal">

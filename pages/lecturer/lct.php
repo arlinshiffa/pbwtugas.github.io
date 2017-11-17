@@ -1,7 +1,9 @@
-<!-- include connection -->
+<!-- include connection dan startSession-->
 <?php
-	include('..\..\phpScript\connection.php');
+	include('../../phpScript/connection.php');
+	include('../../phpScript/startSession.php');
 ?>
+
 <!DOCTYPE html>
 <html>
 	<head>

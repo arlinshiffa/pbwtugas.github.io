@@ -1,3 +1,8 @@
+<?php
+    $root='/pbwtugas.github.io';
+?>
+
+  
 <div class="w3-container w3-theme-dark">
         <div class="headerText">
             <h4>Interactive Digital Learning Environtment</h4>
@@ -7,6 +12,6 @@
             <br>
         </div>
        <div width="25%">
-            <img class="w3-display-topright imgLogo" src="img/logo.png" alt="" width="130px">git
+            <img class="w3-display-topright imgLogo" src=<?php echo '"'.$root?>/img/logo.png" alt="" width="130px">
        </div>
 </div>
