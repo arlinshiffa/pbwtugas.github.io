@@ -34,7 +34,7 @@
 				<h2>Login</h2>
 
 				<form action="phpScript/login.php" method="post">
-					<input class="w3-input" type="text" name="username" placeholder="username">
+					<input class="w3-input" type="text" name="username" value='<?php if(isset($_COOKIE['username'])){echo $_COOKIE['username'];} ?>' placeholder="username">
 					<br>
 					<input class="w3-input" type="password" name="password" placeholder="password">
 					<br>
