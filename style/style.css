@@ -7,11 +7,10 @@
     font-family:adobe;
     src: url(../fonts/AdobeFanHeitiStd-Bold.otf);
 }
+
 .bodyIndex{
     background-image: url(../img/bgImg.jpg);
-    background-size: 1280px; 
-    background-repeat: no-repeat;
-    background-position: contain;
+    background-size: 100%; 
     color: white;
     font-family: candara;
 }
@@ -20,6 +19,8 @@
     padding:0;
     margin-left: 30px;
 }
+
+
 
 .IDEtitle{
     margin-top: 200px;
@@ -33,6 +34,7 @@
     color:black;
     max-width: 450px;
 }
+
 
 .loginmodal a{
     text-decoration-line: underline;
@@ -49,12 +51,7 @@
     margin:0;
 }
 /* --------INDEX HTML STYLING ENDS HERE------------*/
-hr{
-    width: 600px;
-    text-align: left;
-    height:5;
-    color: grey;
-}
+
 
 .headerText{
     width: 75%;
@@ -66,6 +63,7 @@ hr{
     margin:20px;
     margin-top:10px;
 }
+
 #borderCustom{
     border: solid;
     width: 8.5cm;
@@ -75,6 +73,16 @@ hr{
 padding: 15px ;  
 margin-left: 350px;
 }
+
+.matkul{
+    text-decoration: none;
+}
+
+.file{
+    font-size: 13px;
+}
+
+
 
 
 
