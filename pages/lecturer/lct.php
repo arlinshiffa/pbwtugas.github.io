@@ -17,6 +17,7 @@
 	
 	<body>
 		<?php $myCourses = false ?>
+		<?php include('../../layout/header.php') ?>
 		<!-- include header -->
 		<?php include('../../layout/header.php'); ?>
 		<div class="w3-main w3-row" style="margin-top:175px;">
