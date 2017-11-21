@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="lib/font-awesome.min.css">
     <link rel="stylesheet" href="lib/font-awesome.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -64,17 +66,31 @@
         </a>
     </div>
     <div id="divLegend">
-        <form>
+        <form style="margin-right: 20px;">
             <fieldset>
-                <legend>General</legend>
-                <span id="fieldName"> Name </span>
-                <input type="text" size="30" id="inputField1">
-                <br>
-                <br>Description
-                <textarea type="text" rows="4" size="30" id="inputField2"> </textarea>
+
+                <legend>
+                    <button class="w3-button w3-large w3-border w3-border-theme  w3-hover-theme toggler" style="background-color: black;color: beige">
+                        General
+                        <i class="fa fa-angle-double-down"></i>
+                    </button>
+                </legend>
+                <div class="w3-hide w3-container">
+                    <span id="fieldName"> Name </span>
+                    <input type="text" size="30" id="inputField1">
+                    <br>
+                    <br>Description
+                    <textarea type="text" rows="4" size="30" id="inputField2"> </textarea>
+                </div>
+
             </fieldset>
             <fieldset>
-                <legend>Content</legend>
+                <legend>
+                    <button class="w3-button w3-large w3-border w3-border-theme  w3-hover-theme toggler" style="background-color: black;color: beige">
+                        Content
+                        <i class="fa fa-angle-double-down"></i>
+                    </button>
+                </legend>
                 <span>Select files
                     <i class="fa fa-question-circle" aria-hidden="true"></i>
                 </span>
@@ -88,5 +104,21 @@
     </div>
 
 </body>
+<script>
+    $(document).ready(function () {
+        $(".toggler").click(function () {
+            $(this).parent().next().toggleClass("w3-hide");
+            $(this).children().toggleClass("fa fa-angle-double-down");
+            $(this).children().toggleClass("fa fa-angle-double-up");
+        });
+
+        $("#blackButton").click(function () {
+            $("w3-container").toggleClass("w3-hide");
+            $("i")("fa fa-angle-double-down");
+            $("i")("fa fa-angle-double-up");
+        });
+
+    })
+</script>
 
 </html>
