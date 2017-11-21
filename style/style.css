@@ -81,6 +81,41 @@ margin-left: 350px;
 .file{
     font-size: 13px;
 }
+#blackButton{
+background-color: black;
+color: beige;
+float: right;
+}
+#divLegend{
+margin-top: 100px;
+margin-left: 350px;
+}
+#fieldName{
+    color: red;
+}
+#inputField1{
+    margin-left: 138px;
+  
+}
+
+#inputField2{
+    margin-left: 100px;
+    width: 295px;
+}
+
+#confirmButton1{
+background-color: black;
+color: beige;
+float: right;
+margin-right: 300px;
+}
+#confirmButton2{
+background-color: black;
+color: beige;
+float: right;
+margin-right: 30px;
+}
+
 
 
 

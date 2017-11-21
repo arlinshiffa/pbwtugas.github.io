@@ -59,10 +59,32 @@
         </p>
     </div>
     <div>
-        <a href=""><button>Collapse All</button></a>  
+        <a href="">
+            <button class="w3-btn" id="blackButton">Collapse All</button>
+        </a>
     </div>
+    <div id="divLegend">
+        <form>
+            <fieldset>
+                <legend>General</legend>
+                <span id="fieldName"> Name </span>
+                <input type="text" size="30" id="inputField1">
+                <br>
+                <br>Description
+                <textarea type="text" rows="4" size="30" id="inputField2"> </textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Content</legend>
+                <span>Select files
+                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                </span>
+            </fieldset>
+        </form>
+    </div>
+
     <div>
-        <legend></legend>
+        <button class="w3-btn" id="confirmButton1"> CANCEL </button>
+        <button class="w3-btn" id="confirmButton2"> SAVE AND RETURN TO COURSE </button>
     </div>
 
 </body>
