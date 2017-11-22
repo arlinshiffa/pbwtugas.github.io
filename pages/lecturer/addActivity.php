@@ -27,7 +27,7 @@
         <p id="courseinfP" class="w3-theme-l3">
             <b>Adding a new files</b>
         </p>
-    </div>
+       </div>
     <div>
         <a href="">
             <button class="w3-btn w3-black w3-text-white w3-hover-white" id="blackButton">Collapse All</button>
@@ -73,16 +73,10 @@
 							
 						
 						</table>
-					
-				
-					
-						
-						
-
 
 				 </fieldset>
-					<br>
-            <fieldset>
+						<br>
+          <fieldset>
                 <legend>
                     <button class="w3-button w3-medium w3-border w3-border-theme w3-black  w3-hover-theme ">
                         Content
@@ -103,10 +97,25 @@
 		</div>
 </div>
 
-			<!---->
-		
-		
-
-		
+		<br>
+		<br>
+		<br>
 
 </html>
+
+<script>
+    $(document).ready(function () {
+        $(".toggler").click(function () {
+            $(this).parent().next().toggleClass("w3-hide");
+            $(this).children().toggleClass("fa fa-angle-double-down");
+            $(this).children().toggleClass("fa fa-angle-double-up");
+        });
+
+        $("#blackButton").click(function () {
+            $("w3-container").toggleClass("w3-hide");
+            $("i")("fa fa-angle-double-down");
+            $("i")("fa fa-angle-double-up");
+        });
+
+    })
+</script>

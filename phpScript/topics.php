@@ -1,4 +1,5 @@
 <?php
+    $root="/pbwtugas.github.io";
     $query="SELECT topic, ID_A as idActivity FROM activities WHERE activities.ID_C=$courseID ORDER BY topic ASC, idActivity DESC";
     if($result=$conn->query($query)){
         while($row=$result->fetch_array()){
@@ -9,8 +10,8 @@
               
                 if($_SESSION['role']=="lecturer"){
                  
-                    echo "<button class='w3-button w3-grey  w3-hover-black w3-small' onclick='document.getElementById('addactivity').style.display='block''>Add Activities</button>";
-                 
+                    echo "<div class='w3-button w3-grey  w3-hover-black w3-small' onclick='openModal()'>Add Activities</div>";
+                    echo "<script>function openModal(){document.getElementById('addactivity').style.display='block'}</script>";
                 
                 }
                 
@@ -21,19 +22,32 @@
     }      
 ?>
 
-<div id='addactivity' class='w3-modal '>; 
-   <div class='w3-modal-content  w3-animate-right'>;
-       <div class='w3-container modalContainer'>
-           <span onclick='document.getElementById('addactivity').style.display='none''class='w3-button w3-display-topright'>&times;</span>
-           <h2>Select Activity</h2>
-           <form action='' method=''>
-               <input class='w3-radio' type='radio' name='typeA' value='assignment'>
-               <br>
-               <input class='w3-radio' type='radio' name='typeA' falue='file'>
-               <br>
-               <input type ='submit' class='w3-btn w3-black w3-small w3-hover-white' value='Add' name='addActivity'>
-                <br>
-           </form>
-       </div>
+<div id="addactivity" class="w3-modal divModal">
+<div class="w3-modal-content  w3-animate-right loginmodal">
+    <div class="w3-container modalContainer">
+    <span onclick="document.getElementById('addactivity').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+    <h2>Add Activity</h2>
+
+    <form action="" method="">
+        <table>
+            <tr>
+                <td><input class="" type="radio" name="typeActivity" > </td>
+                <td> <label for=""><i class ="fa fa-file-text-o"></i> Assignment</label></td>
+            </tr>
+            <tr>
+                <td><input class="" type="radio" name="typeActivity" ></td>
+                <td><label><i class ="fa fa-file-o"></i> File</label></td>
+            </tr>
+        </table>
+        <br>
+        <a href="<?php echo $root?>/pages/lecturer/addActivity.php"><div class="w3-btn w3-black w3-small w3-hover-white">Add</div></a>
+        <br>
+        <br>
+    </form>
+
+    <!--include login.php-->
+    
+   
     </div>
-  </div>
+</div>
+</div>
