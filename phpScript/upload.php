@@ -20,7 +20,7 @@
     //try to upload in the right folder
     $fileType=pathinfo($target_file, PATHINFO_EXTENSION);
     move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
-    echo $query;
-    echo $courseTitle1;
+    //echo $query;
+    //echo $courseTitle1;
 
 ?>
