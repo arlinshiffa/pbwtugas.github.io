@@ -5,8 +5,8 @@
     $courseTitle=substr($_POST['courseTitle'],0,strpos($_POST['courseTitle'],"/"));
     $courseTitle1=$_POST['courseTitle'];
     
-    $query="INSERT INTO submissions (ID_A,ID_U,submitTime,fileDirectory) VALUES(".$_POST['ID_A'].",".$_SESSION['ID'].",".time().",/upload/".$_POST['typeActivity']."/$courseTitle/". basename($_FILES["file"]["name"]).")";
-
+    // $query="INSERT INTO submissions (ID_A,ID_U,submitTime,fileDirectory) VALUES(".$_POST['ID_A'].",".$_SESSION['ID'].",".time().",/upload/".$_POST['typeActivity']."/$courseTitle/". basename($_FILES["file"]["name"]).")";
+   // $query="INSERT INTO activities(ID_AT,ID_C,dateOpen, dateClose, submissions, title, topic, fileDir) VALUES("")";
     //target folder untuk mengupload file
     $target_dir="../upload/".$_POST['typeActivity']."/$courseTitle/";
     $target_file= $target_dir.basename($_FILES["file"]["name"]);
@@ -22,6 +22,5 @@
     move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
     echo $query;
     echo $courseTitle1;
-
 
 ?>
