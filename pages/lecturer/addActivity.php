@@ -98,10 +98,10 @@
     </div>
 		<br>
 		<br>
-    <div>
+    <div style="margin-left:27%">
         <button class="w3-btn" id="confirmButton1"> CANCEL </button>
         <button class="w3-btn" id="confirmButton2"> SAVE AND RETURN TO COURSE </button>
-		</div>
+	</div>
 </div>
 
 		<br>
