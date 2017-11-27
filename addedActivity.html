@@ -70,7 +70,7 @@
             <fieldset>
 
                 <legend>
-                    <button class="w3-button w3-large w3-border w3-border-theme  w3-hover-theme toggler" style="background-color: black;color: beige">
+                    <button class="w3-button w3-large w3-border w3-border-theme  w3-hover-theme toggler collapse" style="background-color: black;color: beige">
                         General
                         <i class="fa fa-angle-double-down"></i>
                     </button>
@@ -86,7 +86,7 @@
             </fieldset>
             <fieldset>
                 <legend>
-                    <button class="w3-button w3-large w3-border w3-border-theme  w3-hover-theme toggler" style="background-color: black;color: beige">
+                    <button class="w3-button w3-large w3-border w3-border-theme  w3-hover-theme toggler collapse" style="background-color: black;color: beige">
                         Content
                         <i class="fa fa-angle-double-down"></i>
                     </button>
@@ -103,6 +103,8 @@
         <button class="w3-btn" id="confirmButton2"> SAVE AND RETURN TO COURSE </button>
     </div>
 
+
+
 </body>
 <script>
     $(document).ready(function () {
@@ -113,14 +115,12 @@
         });
 
         $("#blackButton").click(function () {
-            $("w3-container").toggleClass("w3-hide");
-            $("i")("fa fa-angle-double-down");
-            $("i")("fa fa-angle-double-up");
+
         });
 
     })
 </script>
 
- 
+
 
 </html>

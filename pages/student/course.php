@@ -5,6 +5,15 @@
      include('../../phpScript/connection.php');
      include('../../phpScript/startSession.php');
      include('../../phpScript/endSession.php');
+
+    //  $target_dir = "Files/";
+    //  $target_file = $target_dir.basename($_FILES["toUpload"]["name"]);
+    //  $uploadOk = 1;
+    //  $fileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+    //  if(isset($_POST["Submit"])){
+    //     $check = getFile
+    //  }
 ?>
 
 
@@ -37,5 +46,7 @@
                 
 		</div>
 		
+
+
 	</body>
 </html>

@@ -2,7 +2,8 @@
 
 	include('../../phpScript/connection.php');
 	include('../../phpScript/startSession.php');
-	include('../../phpScript/endSession.php');
+    include('../../phpScript/endSession.php');
+    $target_dir= "uploads/"
 
 ?>
 <!DOCTYPE html>
@@ -28,23 +29,24 @@
             <b>Adding a new files</b>
         </p>
        </div>
+
     <div>
-        <a href="">
-            <button class="w3-btn w3-black w3-text-white w3-hover-white" id="blackButton">Collapse All</button>
+        <a>
+            <div class="w3-btn w3-black w3-text-white w3-hover-white toggler "  id="blackButton">Expand All</div>
         </a>
     </div>
 		
 		<div id="divLegend">
-        <form style="margin-right: 20px;">
+        <form method="get" action="addActivity.php" style="margin-right: 20px;">
             <fieldset>
 
                 <legend>
-                    <button class="w3-button w3-medium w3-border w3-border-theme w3-black  w3-hover-theme " >
+                    <div class="w3-button w3-medium w3-border w3-border-theme w3-black  w3-hover-theme toggler collapse " >
                         General
                         <i class="fa fa-angle-double-down"></i>
-                    </button>
+                    </div>
                 </legend>
-                <div class=" w3-container">
+                <div class="w3-hide w3-container collapse">
                     <span id="fieldName"> Name * </span>
                     <input type="text" size="30" id="inputField1">
                     <br>
@@ -56,19 +58,23 @@
 						<br>
 						<fieldset >
 					<legend>
-						<button class="w3-button w3-black w3-text-white">Availability <i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
+						<div class="w3-button w3-black w3-text-white toggler collapse1">Availability <i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
 					</legend>
+                    <div class="w3-container w3-hide collapse">
 						<table>
-							<tr>
-								<td  style="text-align:center;" ><label class="">Allow submission from <i class="fa fa-question-circle" aria-hidden="true"></i></label></td>
-								<td>	<input type="date" class="form-control" id="" ></td>
-								<td><input type="checkbox" name="" value="">Enable</td>
-							</tr>
-							<tr>
-								<td style="text-align:center;" ><label class="">Due date <i class="fa fa-question-circle" aria-hidden="true"></i></label></td>
-								<td>	<input type="date" class="form-control" id="" >	</td>
-								<td><input type="checkbox" name="" value="">Enable</td>
-							</tr>
+                       
+                            <tr>
+                                    <td  style="text-align:center;" ><label class="">Allow submission from <i class="fa fa-question-circle" aria-hidden="true"></i></label></td>
+                                    <td>	<input type="date" class="form-control" id="" ></td>
+                                    <td><input type="checkbox" name="" value="">Enable</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;" ><label class="">Due date <i class="fa fa-question-circle" aria-hidden="true"></i></label></td>
+                                    <td>	<input type="date" class="form-control" id="" >	</td>
+                                    <td><input type="checkbox" name="" value="">Enable</td>
+                                </tr>
+                        </div>
+						
 								
 							
 						
@@ -78,12 +84,13 @@
 						<br>
           <fieldset>
                 <legend>
-                    <button class="w3-button w3-medium w3-border w3-border-theme w3-black  w3-hover-theme ">
+                    <div class="w3-button w3-medium w3-border w3-border-theme w3-black  w3-hover-theme toggler collapse ">
                         Content
                         <i class="fa fa-angle-double-down"></i>
-                    </button>
+                    </div>
                 </legend>
-                <span>Select files
+
+                <span class="w3-container w3-hide collapse">Select files <input type="file" name="pic" accept="image/*">
                     <i class="fa fa-question-circle" aria-hidden="true"></i>
                 </span>
             </fieldset>
@@ -112,9 +119,29 @@
         });
 
         $("#blackButton").click(function () {
-            $("w3-container").toggleClass("w3-hide");
-            $("i")("fa fa-angle-double-down");
-            $("i")("fa fa-angle-double-up");
+          
+
+           if($(this).html()=="Collapse All"){
+            $(this).html("Expand All");
+            $(".toggler").each(function(){
+                if(!$(this).parent().next().hasClass("w3-hide")){
+                    $(this).parent().next().toggleClass("w3-hide");
+                    $(this).children().toggleClass("fa fa-angle-double-down");
+                    $(this).children().toggleClass("fa fa-angle-double-up");
+                    
+                } 
+           })
+           }else{
+            $(this).html("Collapse All");
+            $(".toggler").each(function(){
+                if($(this).parent().next().hasClass("w3-hide")){
+                    $(this).parent().next().toggleClass("w3-hide");
+                    $(this).children().toggleClass("fa fa-angle-double-down");
+                    $(this).children().toggleClass("fa fa-angle-double-up");
+                    
+                } 
+           })
+           }
         });
 
     })
