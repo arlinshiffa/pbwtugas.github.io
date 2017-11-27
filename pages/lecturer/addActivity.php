@@ -26,7 +26,7 @@
 
 		<div class="contentDiv">
         <p id="courseinfP" class="w3-theme-l3">
-            <b>Adding a new files</b>
+            <b>Adding a new files </b>
         </p>
        </div>
 
@@ -34,6 +34,7 @@
         <a>
             <div class="w3-btn w3-black w3-text-white w3-hover-white toggler "  id="blackButton">Expand All</div>
         </a>
+       
     </div>
 		
 		<div id="divLegend">
@@ -68,6 +69,7 @@
                         <br>
                 <?php
                      if($_GET['typeActivity']=="assignment"){
+                        $ID_AT=1;
                         echo '	<fieldset >
                         <legend>
                             <div class="w3-button w3-black w3-text-white toggler collapse1">Availability <i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
@@ -93,6 +95,8 @@
                             </table>
     
                      </fieldset><br>';
+                    }else{
+                        $ID_AT=2;
                     }
                 ?>
 			
@@ -113,11 +117,14 @@
 
             <br>
             <div style="margin-left:27%">
-                <input type="hidden" name="courseID" value="<?php echo $courseID ?>">
-                <input type="hidden" name="courseTitle" value="<?php echo $courseTitle ?>">
+                    
+                <input type="hidden" name="courseID" value="<?php echo $_GET['courseID']?>">
+                <input type="hidden" name="courseTitle" value="<?php echo $_GET['courseTitle'] ?>">
+                <input type="hidden" name="id_AT" value="<?php echo $ID_AT?>">
                 <input type="hidden" name="typeActivity" value="<?php echo $_GET['typeActivity'] ?>">
                 <input class="w3-btn w3-black w3-small w3-hover-white" id="" type="submit" value="SAVE AND RETURN TO COURSE"> 
                 <button class="w3-btn w3-black w3-small w3-hover-white"> CANCEL </button>
+                
             </div>
         </form>
     </div>

@@ -12,7 +12,6 @@
                  
                     echo "<div class='w3-button w3-grey  w3-hover-black w3-small' onclick='openModal()'>Add Activities</div>";
                     echo "<script>function openModal(){document.getElementById('addactivity').style.display='block'}</script>";
-                
                 }
                 
                 echo " </div>";
@@ -31,11 +30,11 @@
     <form action="<?php echo $root?>/pages/lecturer/addActivity.php" method="get">
         <table>
             <tr>
-                <td><input class="" type="radio" name="typeActivity" value="assignment" > </td>
+                <td><input class="" type="radio" name="typeActivity" value=assignment > </td>
                 <td><label for=""><i class ="fa fa-file-text-o"></i> Assignment</label></td>
             </tr>
             <tr>
-                <td><input class="" type="radio" name="typeActivity" value="file"></td>
+                <td><input class="" type="radio" name="typeActivity" value=file></td>
                 <td><label><i class ="fa fa-file-o"></i> File</label></td>
             </tr>
             <input type="hidden" name="courseID" value="<?php echo $courseID ?>">
