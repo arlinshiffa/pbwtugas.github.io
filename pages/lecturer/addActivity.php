@@ -3,7 +3,7 @@
 	include('../../phpScript/connection.php');
 	include('../../phpScript/startSession.php');
     include('../../phpScript/endSession.php');
-    $target_dir= "uploads/"
+   
 
 ?>
 <!DOCTYPE html>
@@ -37,51 +37,66 @@
     </div>
 		
 		<div id="divLegend">
-        <form method="get" action="addActivity.php" style="margin-right: 20px;">
+            <form action=""></form>
+        <form method="post" action="../../phpScript/upload.php" style="margin-right: 20px;" enctype="multipart/form-data">
             <fieldset>
-
+               
                 <legend>
                     <div class="w3-button w3-medium w3-border w3-border-theme w3-black  w3-hover-theme toggler collapse " >
                         General
                         <i class="fa fa-angle-double-down"></i>
                     </div>
                 </legend>
+
                 <div class="w3-hide w3-container collapse">
-                    <span id="fieldName"> Name * </span>
-                    <input type="text" size="30" id="inputField1">
+                    <table>
+                        <tr>
+                            <td><span id="fieldName"> Name * </span></td>
+                            <td> <input type="text" size="30" name="title" id="inputField1"></td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td><textarea type="text" rows="4" size="30" name="description" id="inputField2"> </textarea></td>
+                        </tr>
+                    </table>
                     <br>
-                    <br>Description
-                    <textarea type="text" rows="4" size="30" id="inputField2"> </textarea>
+                    <br
+                    
                 </div>
 
-						</fieldset>
-						<br>
-						<fieldset >
-					<legend>
-						<div class="w3-button w3-black w3-text-white toggler collapse1">Availability <i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
-					</legend>
-                    <div class="w3-container w3-hide collapse">
-						<table>
-                       
-                            <tr>
-                                    <td  style="text-align:center;" ><label class="">Allow submission from <i class="fa fa-question-circle" aria-hidden="true"></i></label></td>
-                                    <td>	<input type="date" class="form-control" id="" ></td>
-                                    <td><input type="checkbox" name="" value="">Enable</td>
-                                </tr>
+		    </fieldset>
+                        <br>
+                <?php
+                     if($_GET['typeActivity']=="assignment"){
+                        echo '	<fieldset >
+                        <legend>
+                            <div class="w3-button w3-black w3-text-white toggler collapse1">Availability <i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
+                        </legend>
+                        <div class="w3-container w3-hide collapse">
+                            <table>
+                           
                                 <tr>
-                                    <td style="text-align:center;" ><label class="">Due date <i class="fa fa-question-circle" aria-hidden="true"></i></label></td>
-                                    <td>	<input type="date" class="form-control" id="" >	</td>
-                                    <td><input type="checkbox" name="" value="">Enable</td>
-                                </tr>
-                        </div>
-						
-								
-							
-						
-						</table>
-
-				 </fieldset>
-						<br>
+                                        <td  style="text-align:center;" ><label class="">Allow submission from <i class="fa fa-question-circle" aria-hidden="true"></i></label></td>
+                                        <td>	<input type="date" name="fromDate" class="form-control" id="" ></td>
+                                        <td><input type="checkbox" name="fromDateEnable" value="">Enable</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;" ><label class="">Due date <i class="fa fa-question-circle" aria-hidden="true"></i></label></td>
+                                        <td>	<input type="date" name="dueDate" class="form-control" id="" >	</td>
+                                        <td><input type="checkbox" name="dueDateEnable" value="">Enable</td>
+                                    </tr>
+                            </div>
+                            
+                                    
+                                
+                            
+                            </table>
+    
+                     </fieldset><br>';
+                    }
+                ?>
+			
+		    
           <fieldset>
                 <legend>
                     <div class="w3-button w3-medium w3-border w3-border-theme w3-black  w3-hover-theme toggler collapse ">
@@ -89,19 +104,26 @@
                         <i class="fa fa-angle-double-down"></i>
                     </div>
                 </legend>
+               
+                <div class="w3-container w3-hide">
+                    <input type="file" id="thefile" name="file"  style="height:0; width:0;">
+                    <label class=" chooseFile" for="thefile" id="filename"> Select files </label><i class="fa fa-question-circle" aria-hidden="true"></i>                  
+                </div>
+         </fieldset>
 
-                <span class="w3-container w3-hide collapse">Select files <input type="file" name="pic" accept="image/*">
-                    <i class="fa fa-question-circle" aria-hidden="true"></i>
-                </span>
-            </fieldset>
+            <br>
+            <div style="margin-left:27%">
+                <input type="hidden" name="courseID" value="<?php echo $courseID ?>">
+                <input type="hidden" name="courseTitle" value="<?php echo $courseTitle ?>">
+                <input type="hidden" name="typeActivity" value="<?php echo $_GET['typeActivity'] ?>">
+                <input class="w3-btn w3-black w3-small w3-hover-white" id="" type="submit" value="SAVE AND RETURN TO COURSE"> 
+                <button class="w3-btn w3-black w3-small w3-hover-white"> CANCEL </button>
+            </div>
         </form>
     </div>
 		<br>
 		<br>
-    <div style="margin-left:27%">
-        <button class="w3-btn" id="confirmButton1"> CANCEL </button>
-        <button class="w3-btn" id="confirmButton2"> SAVE AND RETURN TO COURSE </button>
-	</div>
+    
 </div>
 
 		<br>
@@ -111,12 +133,18 @@
 </html>
 
 <script>
+   
+
     $(document).ready(function () {
         $(".toggler").click(function () {
             $(this).parent().next().toggleClass("w3-hide");
             $(this).children().toggleClass("fa fa-angle-double-down");
             $(this).children().toggleClass("fa fa-angle-double-up");
         });
+
+        $('#thefile').change(function(e){
+            $('#filename').html(e.target.files[0].name+" ");
+        })
 
         $("#blackButton").click(function () {
           

@@ -94,6 +94,7 @@ margin-left:24%;
 #fieldName{
     color: red;
 }
+
 #inputField1{
     margin-left:24%;
   
@@ -115,6 +116,11 @@ background-color: black;
 color: white;
 float: right;
 margin-right: 30px;
+}
+
+
+.chooseFile:hover{
+    cursor:pointer;
 }
 
 

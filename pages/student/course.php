@@ -39,6 +39,7 @@
                 </p>
             </div>
 
+            <!-- include topic -->
             <div class="topic">
                 <?php include("../../phpScript/topics.php");?>
             </div>

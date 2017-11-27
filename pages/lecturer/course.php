@@ -30,7 +30,7 @@
             </div>
 
             
-                <?php include("../../phpScript/topics.php");?>
+            <?php include("../../phpScript/topics.php");?>
             
 			
 		</div>
