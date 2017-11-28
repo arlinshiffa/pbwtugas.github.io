@@ -17,13 +17,20 @@
         mkdir($target_dir,0777,true);
     }
 
-    //check if form null or not
-    
+    $fromDate= NULL;
+    $dueDate= NULL;
+    if(isset($_POST['fromDate'])){
+        $fromDate= $_POST['fromDate'];
+    }
 
+    if(isset($_POST['dueDate'])){
+        $dueDate= $_POST['dueDate'];
+    }
+    echo $dueDate;
      //$query="INSERT INTO submissions (ID_A,ID_U,submitTime,fileDirectory) VALUES(".$_POST['ID_A'].",".$_SESSION['ID'].",".time().",/upload/".$_POST['typeActivity']."/$courseTitle/". basename($_FILES["file"]["name"]).")";
-    $query2="INSERT INTO activities(ID_AT,ID_C,dateOpen, dateClose, submissions, title, topic, fileDir) VALUES(".$id_AT.",".$_POST['courseID'].",".$_POST['fromDate'].",".$_POST['dueDate'].",0,".$_POST['title'].",".$_POST['topic'].",'".$fileDir."')";
+    $query2="INSERT INTO activities(ID_AT,ID_C,dateOpen, dateClose, submissions, title, topic, fileDir) VALUES(".$id_AT.",".$_POST['courseID'].",".$fromDate.",".$dueDate.",0,'".$_POST['title']."',".$_POST['topic'].",'".$fileDir."')";
     //run the query
-    //$conn->query($query);
+    $conn->query($query2);
 
     //try to upload in the right folder
     $fileType=pathinfo($target_file, PATHINFO_EXTENSION);

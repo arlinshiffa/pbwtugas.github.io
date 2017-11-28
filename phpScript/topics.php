@@ -62,7 +62,7 @@
 <script>
     
     $(".addButton").click(function(){
-        var str=$(this).prev().prev().prev().html();
+        var str=$(this).prev().prev().prev().prev().html();
         var res = str.substring(6,8);
         resInt= parseInt(res);
         $("#topic").val(resInt);
