@@ -10,7 +10,10 @@
                 echo "<div>";
                 if($result=$conn->query($query)){
                     while($row=$result->fetch_array()){
-                        echo "<div class='w3-small'><a href='../..".$row['fileDir']."' download>";
+                        
+                            echo "<div class='w3-small'><a href='../..".$row['fileDir']."' download>";
+                        
+                       
                         echo $row['title'];
                         echo "</a><br><br>";
                         echo"</div>";

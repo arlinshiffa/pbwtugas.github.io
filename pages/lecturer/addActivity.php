@@ -80,12 +80,12 @@
                                 <tr>
                                         <td  style="text-align:center;" ><label class="">Allow submission from <i class="fa fa-question-circle" aria-hidden="true"></i></label></td>
                                         <td>	<input type="date" name="fromDate" class="form-control" id="" ></td>
-                                        <td><input type="checkbox" name="fromDateEnable" value="">Enable</td>
+                                        <td><input type="checkbox" name="fromDateEnable">Enable</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align:center;" ><label class="">Due date <i class="fa fa-question-circle" aria-hidden="true"></i></label></td>
                                         <td>	<input type="date" name="dueDate" class="form-control" id="" >	</td>
-                                        <td><input type="checkbox" name="dueDateEnable" value="">Enable</td>
+                                        <td><input type="checkbox" name="dueDateEnable">Enable</td>
                                     </tr>
                             </div>
                             

@@ -17,27 +17,27 @@
         mkdir($target_dir,0777,true);
     }
 
-    $fromDate= NULL;
-    $dueDate= NULL;
-    if(isset($_POST['fromDate'])){
+    $fromDate= "NULL";
+    $dueDate= "NULL";
+    if($_POST['fromDateEnable']==true){
         $fromDate= $_POST['fromDate'];
+        $fromDate="'".$fromDate."'";
     }
 
-    if(isset($_POST['dueDate'])){
+    if($_POST['dueDateEnable']==true){
         $dueDate= $_POST['dueDate'];
+        $dueDate="'".$dueDate."'";
     }
     echo $dueDate;
      //$query="INSERT INTO submissions (ID_A,ID_U,submitTime,fileDirectory) VALUES(".$_POST['ID_A'].",".$_SESSION['ID'].",".time().",/upload/".$_POST['typeActivity']."/$courseTitle/". basename($_FILES["file"]["name"]).")";
     $query2="INSERT INTO activities(ID_AT,ID_C,dateOpen, dateClose, submissions, title, topic, fileDir) VALUES(".$id_AT.",".$_POST['courseID'].",".$fromDate.",".$dueDate.",0,'".$_POST['title']."',".$_POST['topic'].",'".$fileDir."')";
     //run the query
-    echo $query2;
     $conn->query($query2);
 
     //try to upload in the right folder
     $fileType=pathinfo($target_file, PATHINFO_EXTENSION);
     move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
-    echo $query2;
     //echo $courseTitle1;
     // echo $_POST['courseID'];
-  header('Location:'.'../pages/lecturer/course.php?&id='.$_POST['courseID']."&courseTitle=".$_POST['courseTitle']);
+  header('Location:'.'../pages/lecturer/course.php?&id='.$_POST['courseID']."&courseTitle=".$_POST['courseTitle']."&id_AT=".$id_AT);
 ?>
