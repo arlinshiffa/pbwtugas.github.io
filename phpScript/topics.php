@@ -1,24 +1,34 @@
 <?php
     $root="/pbwtugas.github.io";
-    $query="SELECT topic, ID_A as idActivity FROM activities WHERE activities.ID_C=$courseID ORDER BY topic ASC, idActivity DESC";
-    if($result=$conn->query($query)){
-        while($row=$result->fetch_array()){
-            $temp=0;
-            if($temp!=$row['topic']){
+    $query="SELECT topic, ID_A as idActivity FROM activities WHERE activities.ID_C=$courseID ORDER BY topic ASC, idActivity ASC";
+    
+            $temp=1;
+            $fortitle=1;
+            while($temp<7){
                 echo "<div id='courseinfP'  style='margin-left:24%;' class='w3-card w3-container'>";
-                echo "<i class='fa fa-newspaper-o'></i> Topic ".$row['topic']."<br><br>";
+                echo "<i class='fa fa-newspaper-o'></i><span> Topic ".$temp."</span><br><br>";
+                $query="SELECT * FROM Activities WHERE ID_C =$courseID AND topic=$temp";
+                if($result=$conn->query($query)){
+                    while($row=$result->fetch_array()){
+                        echo "<div class='w3-small'>";
+                        echo $row['title'];
+                        echo "<br><br>";
+                        echo"</div>";
+                    }
+                }
               
                 if($_SESSION['role']=="lecturer"){
-                 
-                    echo "<div class='w3-button w3-grey  w3-hover-black w3-small' onclick='openModal()'>Add Activities</div>";
+                  
+
+                    echo "<div class='w3-button w3-grey  w3-hover-black w3-small addButton' onclick='openModal()'>Add Activities</div>";
                     echo "<script>function openModal(){document.getElementById('addactivity').style.display='block'}</script>";
+                   
                 }
-                
+
                 echo " </div>";
                 $temp++;
             }
-        }         
-    }      
+      
 ?>
 
 <div id="addactivity" class="w3-modal divModal">
@@ -38,6 +48,7 @@
                 <td><label><i class ="fa fa-file-o"></i> File</label></td>
             </tr>
             <input type="hidden" name="courseID" value="<?php echo $courseID ?>">
+            <input type="hidden" name="topic" value="" id="topic">
             <input type="hidden" name="courseTitle" value="<?php echo $courseTitle ?>">
         </table>
         <br>
@@ -48,3 +59,12 @@
     </div>
 </div>
 </div>
+<script>
+    
+    $(".addButton").click(function(){
+        var str=$(this).prev().prev().prev().html();
+        var res = str.substring(6,8);
+        resInt= parseInt(res);
+        $("#topic").val(resInt);
+    })
+</script>

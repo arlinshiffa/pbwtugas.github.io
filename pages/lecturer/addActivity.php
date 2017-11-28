@@ -120,6 +120,7 @@
                     
                 <input type="hidden" name="courseID" value="<?php echo $_GET['courseID']?>">
                 <input type="hidden" name="courseTitle" value="<?php echo $_GET['courseTitle'] ?>">
+                <input type="hidden" name="topic" value="<?php echo $_GET['topic'] ?>">
                 <input type="hidden" name="id_AT" value="<?php echo $ID_AT?>">
                 <input type="hidden" name="typeActivity" value="<?php echo $_GET['typeActivity'] ?>">
                 <input class="w3-btn w3-black w3-small w3-hover-white" id="" type="submit" value="SAVE AND RETURN TO COURSE"> 
