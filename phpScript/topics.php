@@ -1,22 +1,22 @@
 <?php
     $root="/pbwtugas.github.io";
     $query="SELECT topic, ID_A as idActivity FROM activities WHERE activities.ID_C=$courseID ORDER BY topic ASC, idActivity ASC";
-    
             $temp=1;
             $fortitle=1;
             while($temp<7){
                 echo "<div id='courseinfP'  style='margin-left:24%;' class='w3-card w3-container'>";
                 echo "<i class='fa fa-newspaper-o'></i><span> Topic ".$temp."</span><br><br>";
-                $query="SELECT * FROM Activities WHERE ID_C =$courseID AND topic=$temp";
+                $query="SELECT * FROM Activities WHERE ID_C = $courseID AND topic = $temp";
+                echo "<div>";
                 if($result=$conn->query($query)){
                     while($row=$result->fetch_array()){
-                        echo "<div class='w3-small'>";
+                        echo "<div class='w3-small'><a href='../..".$row['fileDir']."' download>";
                         echo $row['title'];
-                        echo "<br><br>";
+                        echo "</a><br><br>";
                         echo"</div>";
                     }
                 }
-              
+                echo "</div>";
                 if($_SESSION['role']=="lecturer"){
                   
 

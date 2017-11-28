@@ -1,0 +1,17 @@
+Nama	: Arlin Sasqia Puspa Shiffa
+NPM	: 2015730023
+
+1. website ini sudah konsisten. karena desain dari website ini tidak mengandung keambiguan arti kata,
+   situasi dan aksi yang dimaksud. 
+2. Flexibility and efficiency of use
+3. Flexibility and efficiency of use
+4. Help and Documentation
+5. Visibility of system status
+6. Aesthetic and minimalist design
+7. Match between system and the real world
+8. User control and freedom
+9. Recognition rather than recall
+
+
+
+
